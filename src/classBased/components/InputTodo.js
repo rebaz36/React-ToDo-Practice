@@ -1,25 +1,28 @@
-import React, { Component } from "react"
+// eslint-disable-next-line max-len
+/* eslint-disable no-alert, react/destructuring-assignment, react/prop-types, react/state-in-constructor */
+import React, { Component } from 'react';
 
 class InputTodo extends Component {
   state = {
-    title: "",
-  }
-  onChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value,    
-    })
-  }
+    title: '',
+  };
 
-  handleSubmit = e => {
+  onChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  handleSubmit = (e) => {
     e.preventDefault();
-    if(this.state.title.trim()) {
+    if (this.state.title.trim()) {
       this.props.addTodoProps(this.state.title);
-      this.setState({    
-        title: ""  
+      this.setState({
+        title: '',
       });
     } else {
-      alert("Please write item")
-    } 
+      alert('Please write item');
+    }
   };
 
   render() {
@@ -30,14 +33,14 @@ class InputTodo extends Component {
           className="input-text"
           placeholder="Add todo..."
           value={this.state.title}
-          name="title"          
+          name="title"
           onChange={this.onChange}
         />
-        <button className="input-submit">Submit</button>
+        <button type="button" className="input-submit">
+          Submit
+        </button>
       </form>
-    )
+    );
   }
 }
-export default InputTodo
-
-
+export default InputTodo;
