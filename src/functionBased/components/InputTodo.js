@@ -1,4 +1,4 @@
-/* eslint-disable max-len, no-alert, react/button-has-type, react/destructuring-assignment, react/prop-types */
+/* eslint-disable max-len, no-alert, no-console, react/button-has-type, react/destructuring-assignment, react/prop-types */
 import React, { useState } from 'react';
 import { FaPlusCircle } from 'react-icons/fa';
 
@@ -22,7 +22,7 @@ const InputTodo = (props) => {
         title: '',
       });
     } else {
-      alert('Please write item');
+      console.log('Please write item');
     }
   };
 
