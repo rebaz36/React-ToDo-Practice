@@ -1,4 +1,4 @@
-/* eslint-disable max-len, react/destructuring-assignment, react/prop-types, react/sort-comp, react/state-in-constructor */
+/* eslint-disable max-len, no-console, react/destructuring-assignment, react/prop-types, react/sort-comp, react/state-in-constructor */
 import React from 'react';
 import styles from './TodoItem.module.css';
 
