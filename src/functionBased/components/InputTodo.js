@@ -1,28 +1,29 @@
-import React, { useState } from "react"
-import { FaPlusCircle } from "react-icons/fa";
+/* eslint-disable max-len, no-alert, react/button-has-type, react/destructuring-assignment, react/prop-types */
+import React, { useState } from 'react';
+import { FaPlusCircle } from 'react-icons/fa';
 
 const InputTodo = (props) => {
   const [inputText, setInputText] = useState({
-    title: "",
-  })
+    title: '',
+  });
 
-  const onChange = e => {
+  const onChange = (e) => {
     setInputText({
       ...inputText,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if(inputText.title.trim()) {
+    if (inputText.title.trim()) {
       props.addTodoProps(inputText.title);
       setInputText({
-        title: "",
-      })
+        title: '',
+      });
     } else {
-      alert("Please write item")
-    } 
+      alert('Please write item');
+    }
   };
 
   return (
@@ -32,14 +33,14 @@ const InputTodo = (props) => {
         className="input-text"
         placeholder="Add todo..."
         value={inputText.title}
-        name="title"          
+        name="title"
         onChange={onChange}
       />
       <button className="input-submit">
-        <FaPlusCircle style={{ color: "darkcyan", fontSize: "20px", marginTop: "2px" }}/>
+        <FaPlusCircle style={{ color: 'darkcyan', fontSize: '20px', marginTop: '2px' }} />
       </button>
     </form>
-  )
-}
+  );
+};
 
-export default InputTodo
+export default InputTodo;
